@@ -11,9 +11,9 @@ class AMap extends StatefulWidget {
 
   const AMap({this.onMapCreated, this.gestureRecognizers});
 
-  final AMapCreatedCallback onMapCreated;
+  final AMapCreatedCallback? onMapCreated;
 
-  final Set<Factory<OneSequenceGestureRecognizer>> gestureRecognizers;
+  final Set<Factory<OneSequenceGestureRecognizer>>? gestureRecognizers;
 
   @override
   State<StatefulWidget> createState() => _AMapState();
@@ -57,7 +57,7 @@ class _AMapState extends State<AMap> {
     final AMapController controller = AMapController.init(id);
 
     if (widget.onMapCreated != null) {
-      widget.onMapCreated(controller);
+      widget.onMapCreated!(controller);
     }
   }
 }

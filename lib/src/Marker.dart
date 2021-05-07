@@ -55,36 +55,36 @@ class MarkerOptions {
 
   /// 设置Marker覆盖物的透明度
   //  alpha 透明度范围[0,1] 1为不透明
-  final double alpha;
+  final double? alpha;
 
   /// 设置Marker覆盖物的锚点比例。锚点是marker 图标接触地图平面的点。图标的左顶点为（0,0）点，右底点为（1,1）点。<br>
   ///
   /// 默认为（0.5,1.0）
   /// @param u 锚点水平范围的比例，建议传入0 到1 之间的数值。
   /// @param v 锚点垂直范围的比例，建议传入0 到1 之间的数值。
-  final double anchorU;
-  final double anchorV;
+  final double? anchorU;
+  final double? anchorV;
 
   /// 一个布尔值，表示Marker是否可拖拽，true表示可拖拽，false表示不可拖拽。
-  final bool draggable;
+  final bool? draggable;
 
   /// 若marker平贴在地图上返回 true；若marker面对镜头返回 false。
-  final bool flat;
+  final bool? flat;
 
   /// 设置Marker覆盖物的图标。相同图案的 icon 的 Marker 最好使用同一个 BitmapDescriptor 对象以节省内存空间。
-  final BitmapDescriptor icon;
+  final BitmapDescriptor? icon;
 
   /// 设置Marker覆盖物的位置坐标。Marker经纬度坐标不能为Null，坐标无默认值。
-  final LatLng position;
+  final LatLng? position;
 
   /// 设置Marker覆盖物的图片旋转角度，从正北开始，逆时针计算。
-  final double rotation;
+  final double? rotation;
 
   /// 设置Marker覆盖物是否可见。
-  final bool visible;
+  final bool? visible;
 
   /// 设置Marker覆盖物 zIndex。
-  final double zIndex;
+  final double? zIndex;
 
 
 //

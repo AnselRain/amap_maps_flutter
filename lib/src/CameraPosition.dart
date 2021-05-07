@@ -12,23 +12,23 @@ class CameraPosition {
         assert(tilt != null),
         assert(zoom != null);
 
-  final double bearing;
+  final double? bearing;
 
-  final LatLng target;
+  final LatLng? target;
 
-  final double tilt;
+  final double? tilt;
 
-  final double zoom;
+  final double? zoom;
 
   /// 转成map便于传递到平台
   dynamic _toMap() => <String, dynamic>{
     'bearing': bearing,
-    'target': target._toJson(),
+    'target': target!._toJson(),
     'tilt': tilt,
     'zoom': zoom,
   };
 
-  static CameraPosition fromMap(dynamic json) {
+  static CameraPosition? fromMap(dynamic json) {
     if (json == null) {
       return null;
     }

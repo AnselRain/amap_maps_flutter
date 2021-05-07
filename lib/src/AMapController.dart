@@ -10,7 +10,7 @@ class AMapController extends ChangeNotifier{
   static const String MEHTOD_NAME_AMAP_ADD_MARKER = "amap#addMarker";
   static const String MEHTOD_NAME_AMAP_UPDATE_MARKER = "amap#updateMarker";
 
-  final int _id;
+  final int? _id;
 
   AMapController._(this._id)
       : assert(_id != null)
@@ -47,7 +47,7 @@ class AMapController extends ChangeNotifier{
         break;
       case METHOD_NAME_CALLBACK_AMAP_ON_CAMERA_CHANGE:
         CameraPosition cameraPosition = CameraPosition.fromMap(
-            call.arguments['position']);
+            call.arguments['position'])!;
         onCameraChanged.call(cameraPosition);
         break;
       default:

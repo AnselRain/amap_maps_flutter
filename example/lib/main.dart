@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -31,9 +31,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
 
-  AMapController mapController;
+  AMapController? mapController;
 
-  Marker currentMarker;
+  Marker? currentMarker;
 
   bool _isAnimation = true;
 
@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("移动到北京"),
               onPressed: () {
                 if (mapController != null) {
-                  mapController.changeCamera(CameraPosition(
+                  mapController!.changeCamera(CameraPosition(
                       target: LatLng(39.893927, 116.405972),
                       zoom: 10
                   ), _isAnimation);
@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 if (mapController != null) {
                   MarkerOptions options = MarkerOptions.defaultOptions;
 
-                  mapController.addMarker(options).then(
+                  mapController!.addMarker(options).then(
                           (marker) {
                         setState(() {
                           currentMarker = marker;
@@ -90,9 +90,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     //fixme 如果默认值不一样如何更新
                     MarkerOptions markerOptions = MarkerOptions(
                         position: LatLng(
-                            currentMarker.options.position.latitude,
-                            currentMarker.options.position.longitude + 0.001));
-                    mapController.updateMarker(currentMarker, markerOptions);
+                            currentMarker!.options.position!.latitude,
+                            currentMarker!.options.position!.longitude + 0.001));
+                    mapController!.updateMarker(currentMarker!, markerOptions);
                   } else {
                     print("currentMarker is null");
                   }
@@ -105,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 if (mapController != null) {
                   MarkerOptions options = MarkerOptions.defaultOptions;
-                  mapController.addMarker(options);
+                  mapController!.addMarker(options);
                 }
               },),
           ],),
@@ -130,8 +130,8 @@ class _MyHomePageState extends State<MyHomePage> {
     mapController = controller;
 
     // 注册监听
-    mapController.onMapLoaded.add(onMapLoaded);
-    mapController.onCameraChanged.add(onCameraChanged);
+    mapController!.onMapLoaded.add(onMapLoaded);
+    mapController!.onCameraChanged.add(onCameraChanged);
   }
 
 

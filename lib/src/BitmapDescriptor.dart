@@ -29,7 +29,7 @@ class BitmapDescriptor {
   }
 
   /// 根据 asset 目录内资源名称，创建 bitmap 描述信息对象。
-  static BitmapDescriptor fromAsset(String assetName, {String package}) {
+  static BitmapDescriptor fromAsset(String assetName, {String? package}) {
     if (package == null) {
       return BitmapDescriptor._(<dynamic>['fromAsset', assetName]);
     } else {

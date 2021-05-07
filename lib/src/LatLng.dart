@@ -33,7 +33,7 @@ class LatLng {
     return <double>[latitude, longitude];
   }
 
-  static LatLng _fromJson(dynamic json) {
+  static LatLng? _fromJson(dynamic json) {
     if (json == null) {
       return null;
     }
@@ -55,15 +55,15 @@ class LatLngBounds {
   LatLngBounds({@required this.southwest, @required this.northeast})
       : assert(southwest != null),
         assert(northeast != null),
-        assert(southwest.latitude <= northeast.latitude);
+        assert(southwest!.latitude <= northeast!.latitude);
 
-  final LatLng southwest;
+  final LatLng? southwest;
 
-  final LatLng northeast;
+  final LatLng? northeast;
 
   /// 传递到平台的时候更方便
   dynamic _toList() {
-    return <dynamic>[southwest._toJson(), northeast._toJson()];
+    return <dynamic>[southwest!._toJson(), northeast!._toJson()];
   }
 
 
