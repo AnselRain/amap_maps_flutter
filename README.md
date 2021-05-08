@@ -13,6 +13,12 @@
 <key>io.flutter.embedded_views_preview</key>
 <string>YES</string>
 ```
+### HOW TO USE
+```
+  amap_flutter_map:
+    git:
+      url: https://github.com/AnselRain/amap_maps_flutter.git
+```
 
 ## 使用示例
 ``` Dart
